@@ -1,7 +1,9 @@
 const theme = {
   color: {
-    backgroundColor: '#24292e',
-    title: 'white'
+    backgroundColorTopbar: '#24292e',
+    backgroundColorMain: '#e1e4e8',
+    title: 'white',
+    primary: '#0366d6'
   },
   fontSize: {
     title: 15
