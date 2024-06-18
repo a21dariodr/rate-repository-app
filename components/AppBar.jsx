@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight,
     display: 'flex',
     flexDirection: 'row',
-    backgroundColor: theme.color.backgroundColorTopbar
+    backgroundColor: theme.colors.backgroundColorTopbar
   },
 });
 

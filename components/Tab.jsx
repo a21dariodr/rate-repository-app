@@ -3,9 +3,9 @@ import theme from "../theme"
 
 const styles = StyleSheet.create({
   title: {
-    color: theme.color.title,
-    fontWeight: 'bold',
-    fontSize: theme.fontSize.title,
+    color: theme.colors.title,
+    fontWeight: theme.fontWeights.bold,
+    fontSize: theme.fontSizes.title,
     paddingVertical: 25,
     paddingHorizontal: 20
   }

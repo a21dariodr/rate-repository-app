@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     flexShrink: 1,
-    backgroundColor: theme.color.backgroundColorMain
+    backgroundColor: theme.colors.backgroundColorMain
   },
 });
 
