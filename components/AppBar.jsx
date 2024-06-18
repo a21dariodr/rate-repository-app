@@ -1,11 +1,9 @@
 import { View, StyleSheet } from 'react-native';
 import Tab from './Tab';
-import Constants from 'expo-constants';
 import theme from '../theme';
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Constants.statusBarHeight,
     display: 'flex',
     flexDirection: 'row',
     backgroundColor: theme.colors.backgroundColorTopbar
@@ -14,7 +12,8 @@ const styles = StyleSheet.create({
 
 const AppBar = () => {
   return <View style={styles.container}>
-      <Tab title={'Repositories'} />
+      <Tab title={'Repositories'} link={'/'} />
+      <Tab title={'Sign in'} link={'/sign-in'} />
     </View>;
 };
 

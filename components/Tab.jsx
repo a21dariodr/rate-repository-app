@@ -1,4 +1,5 @@
-import { Text, StyleSheet, Pressable } from "react-native"
+import { Text, StyleSheet } from "react-native"
+import { Link } from "react-router-native"
 import theme from "../theme"
 
 const styles = StyleSheet.create({
@@ -11,11 +12,11 @@ const styles = StyleSheet.create({
   }
 })
 
-const Tab = ({ title }) => {
+const Tab = ({ title, link }) => {
   return (
-    <Pressable onPress={() => console.log('Pressable pressed!')}>
+    <Link to={link}>
       <Text style={styles.title}>{title}</Text>
-    </Pressable>
+    </Link>
   )
 }
 
