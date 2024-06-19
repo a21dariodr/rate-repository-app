@@ -1,13 +1,13 @@
 import { View, StyleSheet } from "react-native"
-import Text from "./Text";
-import { formatNumber } from "../utils";
+import Text from "./Text"
+import { formatNumber } from "../utils"
 
 const styles = StyleSheet.create({
   container: {
     gap: 5,
     alignItems: 'center'
   }
-});
+})
 
 const Rating = ({ name, value }) => {
   return (
