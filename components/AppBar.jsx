@@ -1,6 +1,6 @@
-import { View, StyleSheet, ScrollView } from 'react-native';
-import Tab from './Tab';
-import theme from '../theme';
+import { View, StyleSheet, ScrollView } from 'react-native'
+import Tab from './Tab'
+import theme from '../theme'
 
 const styles = StyleSheet.create({
   container: {
@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: theme.colors.backgroundColorTopbar
   },
-});
+})
 
 const AppBar = () => {
   return (
@@ -21,4 +21,4 @@ const AppBar = () => {
   )
 }
 
-export default AppBar;
+export default AppBar

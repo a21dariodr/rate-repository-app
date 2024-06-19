@@ -1,9 +1,9 @@
-import { StyleSheet, View } from 'react-native';
-import { Route, Routes, Navigate } from 'react-router-native';
-import AppBar from './AppBar';
-import RepositoryList from './RepositoryList';
-import SignIn from './SignIn';
-import theme from '../theme';
+import { StyleSheet, View } from 'react-native'
+import { Route, Routes, Navigate } from 'react-router-native'
+import AppBar from './AppBar'
+import RepositoryList from './RepositoryList'
+import SignIn from './SignIn'
+import theme from '../theme'
 
 const styles = StyleSheet.create({
   container: {
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     flexShrink: 1,
     backgroundColor: theme.colors.backgroundColorMain
   },
-});
+})
 
 const Main = () => {
   return (
@@ -23,7 +23,7 @@ const Main = () => {
         <Route path='*' element={<Navigate to={'/'} replace />} />
       </Routes>
     </View>
-  );
-};
+  )
+}
 
-export default Main;
+export default Main
