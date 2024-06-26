@@ -10,7 +10,6 @@ const useSignIn = () => {
         credentials: { username, password } 
       } 
     })
-    return result
   }
 
   return [signIn, result]
