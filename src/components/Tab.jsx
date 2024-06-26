@@ -1,6 +1,6 @@
 import { Text, StyleSheet } from "react-native"
 import { Link } from "react-router-native"
-import theme from "../theme"
+import theme from "../utils/theme"
 
 const styles = StyleSheet.create({
   title: {

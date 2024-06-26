@@ -1,6 +1,6 @@
 import { View, StyleSheet, ScrollView } from 'react-native'
 import Tab from './Tab'
-import theme from '../theme'
+import theme from '../utils/theme'
 
 const styles = StyleSheet.create({
   container: {

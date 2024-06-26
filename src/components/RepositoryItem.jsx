@@ -1,5 +1,5 @@
 import { View, StyleSheet } from "react-native"
-import theme from "../theme"
+import theme from "../utils/theme"
 import AvatarImage from "./Image"
 import Rating from "./Rating"
 import Text from "./Text"

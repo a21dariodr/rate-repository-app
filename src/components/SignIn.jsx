@@ -1,6 +1,6 @@
 import { View, TextInput, Pressable, StyleSheet } from 'react-native'
 import Text from './Text'
-import theme from '../theme'
+import theme from '../utils/theme'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
 
