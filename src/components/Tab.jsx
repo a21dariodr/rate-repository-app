@@ -1,4 +1,4 @@
-import { Text, StyleSheet } from "react-native"
+import { Text, Pressable, StyleSheet } from "react-native"
 import { Link } from "react-router-native"
 import theme from "../utils/theme"
 
@@ -12,11 +12,18 @@ const styles = StyleSheet.create({
   }
 })
 
-const Tab = ({ title, link }) => {
+const Tab = ({ title, link, onPress }) => {
+  if (link) {
+    return (
+      <Link to={link}>
+        <Text style={styles.title}>{title}</Text>
+      </Link>
+    )
+  }
   return (
-    <Link to={link}>
+    <Pressable onPress={onPress}>
       <Text style={styles.title}>{title}</Text>
-    </Link>
+    </Pressable>
   )
 }
 
