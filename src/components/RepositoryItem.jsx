@@ -10,6 +10,9 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.title,
     padding: 20
   },
+  mainContainerMarginBottom: {
+    marginBottom: 10
+  },
   infoContainer: {
     flexDirection: 'row',
     gap: 20
@@ -42,7 +45,7 @@ const styles = StyleSheet.create({
 
 const RepositoryItem = ({ item, showButton }) => {
   return (
-    <View testID="repositoryItem" style={styles.mainContainer}>
+    <View testID="repositoryItem" style={[styles.mainContainer, showButton && styles.mainContainerMarginBottom]}>
       <View style={styles.infoContainer}>
         <AvatarImage imageUrl={item?.ownerAvatarUrl} />
         <View style={styles.columnInfoContainer}>
