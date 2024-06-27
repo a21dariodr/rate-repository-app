@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 
 const RepositoryItem = ({ item }) => {
   return (
-    <View style={styles.mainContainer}>
+    <View testID="repositoryItem" style={styles.mainContainer}>
       <View style={styles.infoContainer}>
         <AvatarImage imageUrl={item.ownerAvatarUrl} />
         <View style={styles.columnInfoContainer}>
