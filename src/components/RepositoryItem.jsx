@@ -8,7 +8,8 @@ import Text from "./Text"
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: theme.colors.title,
-    padding: 20
+    padding: 20,
+    zIndex: -5
   },
   mainContainerMarginBottom: {
     marginBottom: 10
