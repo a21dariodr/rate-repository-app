@@ -53,10 +53,18 @@ export const GET_USERS = gql`
 `
 
 export const GET_LOGGED_USER = gql`
-  query {
+  query getLoggedUser($includeReviews: Boolean = false) {
     me {
       id
       username
+      reviews @include(if: $includeReviews) {
+        edges {
+          node {
+            ...ReviewDetails
+          }
+        }
+      }
     }
   }
+  ${REVIEW_DETAILS}
 `

@@ -3,7 +3,7 @@ import { format } from "date-fns"
 import Text from "./Text"
 import theme from "../utils/theme"
 
-const ReviewItem = ({ review }) => {
+const ReviewItem = ({ review, showFullName }) => {
   const styles = StyleSheet.create({
     container: {
       display: "flex",
@@ -35,7 +35,7 @@ const ReviewItem = ({ review }) => {
         {review.rating}
       </Text>
       <View style={styles.detailsView}>
-        <Text fontWeight="bold">{review.user.username}</Text>
+        <Text fontWeight="bold">{showFullName ? review.repository.fullName : review.user.username}</Text>
         <Text color="secondary">
           {format(new Date(review.createdAt), "dd.mm.yyyy")}
         </Text>

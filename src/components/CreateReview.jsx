@@ -3,6 +3,7 @@ import Text from './Text'
 import { useNavigate } from 'react-router-native'
 import { useMutation } from '@apollo/client'
 import { CREATE_REVIEW } from '../graphql/mutations'
+import { GET_LOGGED_USER } from '../graphql/queries'
 import theme from '../utils/theme'
 import { useFormik } from 'formik'
 import * as yup from 'yup'
@@ -137,6 +138,12 @@ export const CreateReviewContainer = ({ onSubmit }) => {
 const CreateReview = () => {
   const [createReview] = useMutation(CREATE_REVIEW, {
     onError: (e) => window.alert(e),
+    refetchQueries: [
+      {
+        query: GET_LOGGED_USER,
+        variables: { includeReviews: true }
+      }
+    ]
   })
   const navigate = useNavigate()
 

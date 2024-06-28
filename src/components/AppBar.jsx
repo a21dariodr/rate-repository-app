@@ -30,11 +30,12 @@ const AppBar = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView horizontal contentContainerStyle={{ width: "100%" }}>
+      <ScrollView horizontal>
         <Tab title={'Repositories'} link={'/'} />
         {data?.me ? (
           <>
             <Tab title={'Create review'} link={'/create-review'} />
+            <Tab title={'My reviews'} link={'/user-reviews'} />
             <Tab title={'Sign out'} onPress={signOut} />
           </>
         )  : (
