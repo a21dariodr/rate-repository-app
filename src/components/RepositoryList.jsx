@@ -4,6 +4,7 @@ import RepositoryItem from './RepositoryItem'
 import useRepositories from '../hooks/useRepositories'
 import ItemSeparator from './ItemSeparator'
 import OrderMenu from './OrderMenu'
+import SearchBar from './SearchBar'
 
 export const RepositoryListContainer = ({ repositories, refetch }) => {
   const navigate = useNavigate()
@@ -20,6 +21,7 @@ export const RepositoryListContainer = ({ repositories, refetch }) => {
         <RepositoryItem item={item} />
       </Pressable>}
       ListHeaderComponent={<View style={{ padding: 10 }}>
+        <SearchBar refetch={refetch} />
         <OrderMenu refetch={refetch} />
       </View>}
       ListHeaderComponentStyle={{ zIndex: 5 }}
