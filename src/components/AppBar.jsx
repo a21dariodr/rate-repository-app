@@ -34,6 +34,7 @@ const AppBar = () => {
         <Tab title={'Repositories'} link={'/'} />
         {data?.me ? (
           <>
+            <Tab title={'Create review'} link={'/create-review'} />
             <Tab title={'Sign out'} onPress={signOut} />
           </>
         )  : (

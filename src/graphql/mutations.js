@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client'
+import { REPOSITORY_DETAILS } from './fragments'
 
 export const AUTHENTICATE = gql`
   mutation authenticate($credentials: AuthenticateInput!) {
@@ -15,4 +16,25 @@ export const CREATE_USER = gql`
       username
     }
   }
+`
+
+export const CREATE_REVIEW = gql`
+  mutation createReview($review: CreateReviewInput!) {
+    createReview(review: $review) {
+      id
+      repository {
+        ...RepositoryDetails
+      }
+      user {
+        id
+        username
+      }
+      userId
+      repositoryId
+      rating
+      createdAt
+      text
+    }
+  }
+  ${REPOSITORY_DETAILS}
 `
