@@ -30,7 +30,7 @@ const AppBar = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView horizontal>
+      <ScrollView horizontal contentContainerStyle={{ width: "100%" }}>
         <Tab title={'Repositories'} link={'/'} />
         {data?.me ? (
           <>
@@ -40,6 +40,7 @@ const AppBar = () => {
         )  : (
           <>
             <Tab title={'Sign in'} link={'/sign-in'} />
+            <Tab title={'Sign up'} link={'/sign-up'} />
           </>
         )}
         
