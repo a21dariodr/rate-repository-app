@@ -6,7 +6,7 @@ import useReviews from "../hooks/useReviews"
 import theme from "../utils/theme"
 
 const ReviewList = () => {
-  const { reviews } = useReviews()
+  const { reviews, refetch } = useReviews()
 
   const reviewsNodes = reviews ? reviews.edges.map((edge) => edge.node) : []
 
@@ -25,7 +25,7 @@ const ReviewList = () => {
     <FlatList
       data={reviewsNodes}
       renderItem={({ item }) =>
-        <ReviewItem review={item} showFullName />
+        <ReviewItem review={item} refetch={refetch} currentUserReviews />
       }
       ItemSeparatorComponent={ItemSeparator}
     />
