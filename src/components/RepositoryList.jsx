@@ -6,7 +6,7 @@ import ItemSeparator from './ItemSeparator'
 import OrderMenu from './OrderMenu'
 import SearchBar from './SearchBar'
 
-export const RepositoryListContainer = ({ repositories, refetch }) => {
+export const RepositoryListContainer = ({ repositories, refetch, onEndReach }) => {
   const navigate = useNavigate()
 
   const repositoryNodes = repositories
@@ -25,14 +25,24 @@ export const RepositoryListContainer = ({ repositories, refetch }) => {
         <OrderMenu refetch={refetch} />
       </View>}
       ListHeaderComponentStyle={{ zIndex: 5 }}
+      onEndReached={onEndReach}
+      onEndReachedThreshold={0.5}
     />
   )
 }
 
 const RepositoryList = () => {
-  const { repositories, refetch } = useRepositories()
+  const { repositories, refetch, fetchMore } = useRepositories({ first: 5 })
 
-  return <RepositoryListContainer repositories={repositories} refetch={refetch} />
+  const onEndReach = () => {
+    fetchMore()
+  }
+
+  return <RepositoryListContainer
+    repositories={repositories}
+    refetch={refetch}
+    onEndReach={onEndReach}
+  />
 }
 
 export default RepositoryList

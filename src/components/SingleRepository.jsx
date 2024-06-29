@@ -7,11 +7,15 @@ import { FlatList } from "react-native"
 
 const SingleRepository = () => {
   const id = useParams().id
-  const { repository } = useRepository(id)
+  const { repository, fetchMore } = useRepository(id, { first: 5 })
 
   const reviews = repository
     ? repository.reviews.edges.map((edge) => edge.node)
     : []
+
+    const onEndReach = () => {
+      fetchMore()
+    }
 
   return (
     <FlatList
@@ -20,6 +24,8 @@ const SingleRepository = () => {
       keyExtractor={({ id }) => id}
       ListHeaderComponent={() => <RepositoryItem item={repository}  showButton />}
       ItemSeparatorComponent={ItemSeparator}
+      onEndReached={onEndReach}
+      onEndReachedThreshold={0.5}
     />
   )
 }
